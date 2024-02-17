@@ -52,25 +52,27 @@ public class Cat {
         int earWidth = headDimension / 3;
         int earHeight = headDimension / 2;
         int earY = catY - earHeight;
-        int leftEarX = catX + earWidth / 2;
-        int rightEarX = catX + headDimension - earWidth / 2;
+        int earBase = headDimension / 4;
+        int leftEarX = catX + earBase;
+        int rightEarX = catX + headDimension - earBase - earWidth;
 
         // Draw ears
         Polygon leftEar = new Polygon();
         leftEar.addPoint(leftEarX, catY);
-        leftEar.addPoint(catX + earWidth, earY);
-        leftEar.addPoint(catX, catY);
+        leftEar.addPoint(catX + earBase / 2, earY);
+        leftEar.addPoint(catX + earBase, catY - earHeight);
 
         Polygon rightEar = new Polygon();
         rightEar.addPoint(rightEarX, catY);
-        rightEar.addPoint(catX + headDimension - earWidth, earY);
-        rightEar.addPoint(catX + headDimension, catY);
+        rightEar.addPoint(catX + headDimension - earBase / 2, earY);
+        rightEar.addPoint(catX + headDimension - earBase, catY - earHeight);
 
         // Fill ears
         g2.setColor(Color.black);
         g2.fillPolygon(leftEar);
         g2.fillPolygon(rightEar);
     }
+
 
     // Method to draw the cat's eyes
     private void drawEyes(Graphics2D g2, int catX, int catY) {
