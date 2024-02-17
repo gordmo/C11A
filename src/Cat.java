@@ -13,6 +13,10 @@ public class Cat {
     private int mouthWidth;
     private int mouthX;
     private int mouthY;
+    
+    private Color bodyColor = Color.BLACK; // Default body color
+    private Color eyeColor = Color.GREEN; // Default eye color
+    private Color mouthColor = Color.PINK; // Default mouth color
 
     public Cat(int headDimension, int eyeY, int eyeX, int eyeSeparation,
                int eyeHeight, int eyeWidth, int mouthHeight, int mouthWidth,
@@ -127,6 +131,21 @@ public class Cat {
     // Setter for eyeX
     public void setEyeX(int eyeX) {
         this.eyeX = eyeX;
+    }
+    
+    // Setter for body color
+    public void setBodyColor(Color color) {
+        this.bodyColor = color;
+    }
+    
+    // Setter for eyecolor
+    public void setEyeColor(Color color) {
+    	this.eyeColor = color;
+    }
+    
+    // Setter for mouthcolor
+    public void setMouthColor(Color color) {
+    	this.eyeColor = color;
     }
 
 }
