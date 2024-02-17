@@ -102,5 +102,21 @@ public class Cat {
         });
         frame.setVisible(true);
     }
+    
+    // Setter for headDimension
+    public void setHeadDimension(int headDimension) {
+        this.headDimension = headDimension;
+    }
+
+    // Setter for eyeY
+    public void setEyeY(int eyeY) {
+        this.eyeY = eyeY;
+    }
+
+    // Setter for eyeX
+    public void setEyeX(int eyeX) {
+        this.eyeX = eyeX;
+    }
+
 }
 
