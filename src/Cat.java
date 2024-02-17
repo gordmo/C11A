@@ -98,8 +98,14 @@ public class Cat {
         frame.add(new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
-                super.paintComponent(g);
+            	super.paintComponent(g);
                 Cat cat = new Cat(100, 25, 25, 33, 20, 10, 10, 25, 40, 60);
+                
+                // Change properties using setters
+                cat.setHeadDimension(120); // Make the head larger
+                cat.setEyeY(30); // Adjust eye vertical position
+                cat.setEyeX(30); // Adjust eye horizontal position
+                
                 cat.draw(g, 100, 100);
             }
         });
