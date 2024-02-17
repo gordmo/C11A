@@ -48,23 +48,26 @@ public class Cat {
         g2.setColor(Color.black);
         g2.fillOval(catX, catY, headDimension, headDimension);
 
-        // Draw ears
+        // Calculate ear positions
         int earWidth = headDimension / 3;
         int earHeight = headDimension / 2;
-        int earX1 = catX - earWidth / 2;
-        int earX2 = catX + headDimension - earWidth / 2;
-        int earY = catY - earHeight / 2;
-        
+        int earY = catY - earHeight;
+        int leftEarX = catX + earWidth / 2;
+        int rightEarX = catX + headDimension - earWidth / 2;
+
+        // Draw ears
         Polygon leftEar = new Polygon();
-        leftEar.addPoint(earX1, earY);
-        leftEar.addPoint(earX1 + earWidth, earY);
-        leftEar.addPoint(earX1 + earWidth / 2, earY - earHeight);
-        
+        leftEar.addPoint(leftEarX, catY);
+        leftEar.addPoint(catX + earWidth, earY);
+        leftEar.addPoint(catX, catY);
+
         Polygon rightEar = new Polygon();
-        rightEar.addPoint(earX2, earY);
-        rightEar.addPoint(earX2 + earWidth, earY);
-        rightEar.addPoint(earX2 + earWidth / 2, earY - earHeight);
-        
+        rightEar.addPoint(rightEarX, catY);
+        rightEar.addPoint(catX + headDimension - earWidth, earY);
+        rightEar.addPoint(catX + headDimension, catY);
+
+        // Fill ears
+        g2.setColor(Color.black);
         g2.fillPolygon(leftEar);
         g2.fillPolygon(rightEar);
     }
